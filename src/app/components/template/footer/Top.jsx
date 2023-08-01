@@ -23,6 +23,7 @@ export default function Top() {
               </span>
               <Link
                 href={process.env.NEXT_PUBLIC_WHATSAPP_URL}
+                target='blank'
                 className="text-color-light text-4 line-height-4 text-decoration-none font-weight-light mb-0"
               >
                 ¡Un Asesor en Linea Ahora!

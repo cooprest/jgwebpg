@@ -267,6 +267,7 @@ export default function Faq() {
             </p>
             <Link
               href={process.env.NEXT_PUBLIC_WHATSAPP_URL}
+              target='blank'
               className="btn btn-primary custom-btn-border-radius font-weight-bold btn-px-5 py-3 mb-2"
             >
               ESCRIBIR YA

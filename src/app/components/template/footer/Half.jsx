@@ -27,6 +27,7 @@ export default function Half() {
               </span>
               <Link
                 href={process.env.NEXT_PUBLIC_WHATSAPP_URL}
+                target='blank'
                 className="text-color-light custom-text-underline-1 font-weight-medium text-3-5"
               >
                 Línea Exclusiva
