@@ -19,7 +19,7 @@ export default function Notice() {
               <strong>LÍNEA DIRECTA WHATSAPP </strong> - Consulta Totalmente Gratis -
               <strong>
                 <Link
-                  href="#"
+                  href={process.env.NEXT_PUBLIC_WHATSAPP_URL}
                   className="text-color-light text-decoration-none custom-text-underline-1"
                 >
                   Enviar mensaje aquí
