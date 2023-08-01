@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800&display=swap");
+
+@import 'bootstrap/dist/css/bootstrap.css';
+@import './assets/vendor/animate/animate.compat.css';
+@import './assets/vendor/fontawesome-free/css/all.min.css';
+@import './assets/vendor/simple-line-icons/css/simple-line-icons.min.css';
+@import './assets/vendor/owl.carousel/owl.carousel.min.css';
+@import './assets/vendor/owl.carousel/owl.theme.default.min.css';
+
+@import './assets/css/theme-elements.css';
+@import './assets/css/theme.css';
+
+@import './assets/css/demos/demo-auto-services.css';
+@import './assets/css/skins/skin-auto-services.css';
