@@ -1,8 +1,9 @@
 import Link from 'next/link'
+import styles from './../../page.module.css'
 
 export default function Notice() {
   return (
-    <div className="notice-top-bar bg-primary" data-sticky-start-at={100}>
+    <div className={`notice-top-bar ${styles["bg-primary"]}`} data-sticky-start-at={100}>
       <button
         className="hamburguer-btn hamburguer-btn-light notice-top-bar-close m-0 active"
         data-set-active="false"

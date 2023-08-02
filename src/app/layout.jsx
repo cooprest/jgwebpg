@@ -1,10 +1,10 @@
-import './globals.css'
 import 'react-toastify/dist/ReactToastify.min.css'
+import GoogleAnalytics from './components/google-tags/GoogleTag'
+import Notice from './components/notice/Notice'
 import Foot from './components/template/footer/Foot'
 import Header from './components/template/header/Header'
-import Notice from './components/notice/Notice'
 import WhatsApp from './components/whatsapp/WhatsApp'
-import GoogleAnalytics from './components/google-tags/GoogleTag'
+import './globals.css'
 
 export const metadata = {
   title:
@@ -16,8 +16,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <GoogleAnalytics
+        GA_TRACKING_ID={process.env.NEXT_PUBLIC_GA_TRACKING_ID}
+      />
       <body>
-        <GoogleAnalytics GA_TRACKING_ID={process.env.NEXT_PUBLIC_GA_TRACKING_ID} />
         <div className="body">
           <Notice />
           <Header />

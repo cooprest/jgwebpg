@@ -32,7 +32,6 @@ export default function Contact() {
           >
             <li className="d-flex align-items-center mb-2">
               <i className="icons icon-envelope text-color-dark me-2" />
-              Correo:
               <a
                 href={`mailto:${process.env.NEXT_PUBLIC_EMAIL_CORP}`}
                 className="text-color-dark text-color-hover-primary text-decoration-none ms-1"
@@ -42,7 +41,6 @@ export default function Contact() {
             </li>
             <li className="d-flex align-items-center mb-0">
               <i className="icons icon-phone text-color-dark me-2" />
-              Teléfono:
               <a
                 href={`tel:+57${process.env.NEXT_PUBLIC_PHONE_LINE}`}
                 className="text-color-dark text-color-hover-primary text-decoration-none ms-1"

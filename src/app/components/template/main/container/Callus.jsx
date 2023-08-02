@@ -1,8 +1,9 @@
 import Link from 'next/link'
+import styles from './../../../../page.module.css'
 
 export default function Callus() {
   return (
-    <section className="section section-height-3 bg-primary border-0 m-0">
+    <section className={`section section-height-3 ${styles["bg-primary"]} border-0 m-0`}>
       <div className="container">
         <div className="row align-items-center">
           <div className="col-lg-6 col-xl-7 text-center text-lg-start mb-4 mb-lg-0">
