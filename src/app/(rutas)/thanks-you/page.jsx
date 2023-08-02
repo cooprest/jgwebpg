@@ -11,7 +11,7 @@ export default function page() {
       <PageHeader />
       <ContentPage />
       <Sponsors />
-      <GoogleEvent GA_TRACKING_ID={process.env.NEXT_PUBLIC_GA_TRACKING_ID} />
+      <GoogleEvent GA_TRACKING_ID={process.env.NEXT_PUBLIC_GA_TRACKING_ID} GA_EVENT_ID={process.env.GA_EVENT_ID} />
       <Script src="/js/plugins/js/plugins.min.js" />
       <Script src="/js/theme.js" />
       <ScriptLoader src="/js/theme.js" />

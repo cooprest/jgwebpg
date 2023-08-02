@@ -2,8 +2,11 @@
 import { useRef } from 'react'
 import { sendMail } from '@/app/services/api/send.email'
 import Link from 'next/link'
+import { ToastContainer, toast } from 'react-toastify'
+import { useRouter } from 'next/navigation'
 
 export default function FormContact() {
+  const router = useRouter()
   const formRef = useRef(null)
 
   const handleSubmit = (event) => {
@@ -11,12 +14,69 @@ export default function FormContact() {
     const formData = new FormData(formRef.current)
     const data = {
       name: formData.get('name'),
-      email: formData.get('email'),
-      phone: '3101112233',
+      email: 'email@siteweb.com',
+      phone: formData.get('phone'),
       description: formData.get('message')
     }
-    console.log(data)
-    sendMail(data).then((response) => console.log(response))
+    sendMail(data)
+      .then(response => {
+        toast.success('¡Perfecto, Mensaje Enviado!', {
+          position: 'top-right',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'colored'
+        })
+      })
+      .then(response => router.push('/thanks-you'))
+      .catch((error) => {
+        const textError = error.response.data.message
+        const textName = '"name"'
+        const textPhone = '"phone"'
+        const textDescription = '"description"'
+
+        if (textError.includes(textName)) {
+          toast.error('ERROR, Por favor valide el campo nombre.', {
+            position: 'top-right',
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'colored'
+          })
+        }
+
+        if (textError.includes(textPhone)) {
+          toast.error('ERROR, Por favor ingrese un número de teléfono válido.',{
+            position: 'top-right',
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'colored'
+          })
+        }
+        
+        if (textError.includes(textDescription)) {
+          toast.error('ERROR, Por favor valide el campo monto.',{
+            position: 'top-right',
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'colored'
+          })
+        }
+      })
   }
 
   return (
@@ -24,7 +84,6 @@ export default function FormContact() {
       ref={formRef}
       onSubmit={handleSubmit}
       className="contact-form custom-form-style-1"
-      action="php/contact-form.php"
       method="POST"
     >
       <div className="contact-form-success alert alert-success d-none mt-4">
@@ -122,6 +181,7 @@ export default function FormContact() {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </form>
   )
 }

@@ -1,6 +1,7 @@
+import './globals.css'
+import 'react-toastify/dist/ReactToastify.min.css'
 import Foot from './components/template/footer/Foot'
 import Header from './components/template/header/Header'
-import './globals.css'
 import Notice from './components/notice/Notice'
 import WhatsApp from './components/whatsapp/WhatsApp'
 import GoogleAnalytics from './components/google-tags/GoogleTag'
